@@ -9,7 +9,7 @@ To run this application, you need Angular, Golang, Node and Mysql installed on y
 
 # Guidelines to run the application
 First, run the cnode.go by the following command
-  #go run cnode.go
+##go run cnode.go
 It will start listening for other nodes on port 6000, so make sure that port 6000 is not in use.
 Now run node.go by the following command
   #go run node.go
