@@ -9,16 +9,16 @@ To run this application, you need Angular, Golang, Node and Mysql installed on y
 
 # Guidelines to run the application
 First, run the cnode.go by the following command  
-go run cnode.go  
+**go run cnode.go**  
 It will start listening for other nodes on port 6000, so make sure that port 6000 is not in use.
 Now run node.go by the following command  
-  go run node.go  
+  **go run node.go**  
 It will connect to the central node on port 6000 and also creates its own http server which will start listening at port 8081, so make sure port 8081 is not in use.
 Now to start front end, you need to download some node modules, for that, go to the directory of front end and write  
-npm install  
+**npm install**  
 It will take some time and will install the required node modules.
 Now to run the front end, write  
-  ng serve  
+  **ng serve**  
 Now go to your favourite browser and type  
   http://localhost:4200  
-make sure that port 4200 is not in use. So in this way, you can now use Idea Market, which is based on a custom Blockchain that protects the ownership of ideas.
+Make sure that port 4200 is not in use. So in this way, you can now use Idea Market, which is based on a custom Blockchain that protects the ownership of ideas.
