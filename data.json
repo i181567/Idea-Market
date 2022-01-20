@@ -1,0 +1,95 @@
+{
+ "ideas": [
+  {
+   "Title": "title",
+   "Description": "description",
+   "Owners": [
+    "Idea Market"
+   ],
+   "Problem": "problems",
+   "Domain": "Domain 2",
+   "Technologies_used": [
+    "MEAN STACK",
+    "MERN STACK"
+   ],
+   "Viewing_price": 4,
+   "Ownership_price": 12,
+   "Pricing_history": [
+    12
+   ]
+  },
+  {
+   "Title": "Route and Safety Awareness using android app (RSA)",
+   "Description": "Route and Safety Awareness using android app as in RSA is an AI-based app that will assist the driver with the road signs and boards. Real-Time video would be captured of the surroundings and that will be given as input to the Android app, and here Preprocessing would be performed on each frame of the video. Deep learning and image processing algorithms would be implemented that will detect and classify the direction signs and safety signs. It will read text written on sign boards and convert that sign image to text then it will convert that text into audio that the driver can listen to using the app.",
+   "Owners": [
+    "Amna Arshad"
+   ],
+   "Problem": "",
+   "Domain": "Route and Safety Awareness using android app as in RSA is an AI-based app that will assist the driver with the road signs and boards. Real-Time video would be captured of the surroundings and that will be given as input to the Android app, and here Preprocessing would be performed on each frame of the video. Deep learning and image processing algorithms would be implemented that will detect and classify the direction signs and safety signs. It will read text written on sign boards and convert that sign image to text then it will convert that text into audio that the driver can listen to using the app.",
+   "Technologies_used": [
+    "Android Studio",
+    "Flutter"
+   ],
+   "Viewing_price": 200,
+   "Ownership_price": 2000,
+   "Pricing_history": [
+    2000
+   ]
+  },
+  {
+   "Title": "GoNotes",
+   "Description": "GoNotes will generate precise notes from video samples. In GoNotes, we extract the audio from video samples, and then transcribe the text from the given audio samples. The text is refined and the lecture will be highlighted to depict the important points and the key terms. The problem that was discovered was that video lectures tend to be quite lengthy and it becomes nearly impossible to revise them without proper lecture notes. So, we used both audio features and textual features to locate emphasized parts of the lectures. This way, by generating precise lecture notes, students will have access to well prepared lecture notes without putting too much effort and saving a lot of time.",
+   "Owners": [
+    "Idea Market"
+   ],
+   "Problem": "",
+   "Domain": "GoNotes will generate precise notes from video samples. In GoNotes, we extract the audio from video samples, and then transcribe the text from the given audio samples. The text is refined and the lecture will be highlighted to depict the important points and the key terms. The problem that was discovered was that video lectures tend to be quite lengthy and it becomes nearly impossible to revise them without proper lecture notes. So, we used both audio features and textual features to locate emphasized parts of the lectures. This way, by generating precise lecture notes, students will have access to well prepared lecture notes without putting too much effort and saving a lot of time.",
+   "Technologies_used": [
+    "Python",
+    "Google Colab",
+    "Flask",
+    "HTML",
+    "CSS",
+    "Wav2Vec2",
+    "Gensim",
+    "Punctuator",
+    "Pydub",
+    "Crepe",
+    "Librosa",
+    "NLTK",
+    "Ngrok"
+   ],
+   "Viewing_price": 300,
+   "Ownership_price": 3000,
+   "Pricing_history": [
+    3000
+   ]
+  },
+  {
+   "Title": "Road Awareness in Smart Cars using Raspberry pi (RAR)",
+   "Description": "RAR is an AI/computer vision based system that will provide assistance to the driver as road awareness is added in the rover using deep learning algorithms implemented on Raspberry Pi. The system consists of two stages. The first stage focuses on “Traffic sign board detection” and the second stage focuses on “Traffic sign classification and recognition”. Video input from the raspberry pi camera module will be taken from the surroundings and whenever a sign appears, the system will generate alerts to notify the driver through an Android application",
+   "Owners": [
+    "Ramen Bukhari"
+   ],
+   "Problem": "",
+   "Domain": "RAR is an AI/computer vision based system that will provide assistance to the driver as road awareness is added in the rover using deep learning algorithms implemented on Raspberry Pi. The system consists of two stages. The first stage focuses on “Traffic sign board detection” and the second stage focuses on “Traffic sign classification and recognition”. Video input from the raspberry pi camera module will be taken from the surroundings and whenever a sign appears, the system will generate alerts to notify the driver through an Android application",
+   "Technologies_used": [
+    "Python",
+    "Thonny",
+    "GitHub",
+    "Trello",
+    "Android Studio",
+    "Arduino",
+    "YOLO",
+    "Raspberry pi",
+    "Rover",
+    "Rpi Camera"
+   ],
+   "Viewing_price": 100,
+   "Ownership_price": 1000,
+   "Pricing_history": [
+    1000
+   ]
+  }
+ ]
+}

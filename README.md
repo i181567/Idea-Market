@@ -1,24 +1,27 @@
-# Idea-Market
-An application that makes the use of custom Blockchain to protect the ownership of ideas.
+# IdeaMarketFE
 
-# Overview
-This application consists of a front-end, that is developed using Angular and a Back-end that is developed using Golang. The database connected to the backend is Mysql. The backend has 2 files named cnode.go and node.go. cnode.go is a central node and can be only one. On the otherhand node.go can be more than one. When the application starts, the cnode.go creates a blockchain of ideas and waits for a node for connection. when a node(node.go) connects with it, it sends the blockchain to the node and then the node shows the ideas and information of the blockchain on its front end. When someone want to add an idea, he/she can propose the frontend. then that idea is sent to the central node for approval. is the central node approves the idea, then it is added to the Blockchain and also shared with all connected nodes. Else it is ejected.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.2.
 
-# Requirements
-To run this application, you need Angular, Golang, Node and Mysql installed on your machine.
+## Development server
 
-# Guidelines to run the application
-First, run the cnode.go by the following command  
-**go run cnode.go**  
-It will start listening for other nodes on port 6000, so make sure that port 6000 is not in use.
-Now run node.go by the following command  
-  **go run node.go**  
-It will connect to the central node on port 6000 and also creates its own http server which will start listening at port 8081, so make sure port 8081 is not in use.
-Now to start front end, you need to download some node modules, for that, go to the directory of front end and write  
-**npm install**  
-It will take some time and will install the required node modules.
-Now to run the front end, write  
-  **ng serve**  
-Now go to your favourite browser and type  
-  http://localhost:4200  
-Make sure that port 4200 is not in use. So in this way, you can now use Idea Market, which is based on a custom Blockchain that protects the ownership of ideas.
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+## Code scaffolding
+
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+
+## Build
+
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+
+## Running unit tests
+
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+
+## Running end-to-end tests
+
+Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+
+## Further help
+
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
