@@ -1,0 +1,41 @@
+<div style="margin-right: 100pt;margin-left: 100pt;padding-top: 50pt;">
+    <div style="width: 100%;box-shadow: 0px 0px 30px gainsboro;
+    border-radius: 10pt;display: flex;flex-direction: row;flex-wrap: wrap;
+    background-image: url(assets/loginBanner.jpg);">
+        <div style="width: 50%;height: 70vh;display: flex;justify-content: center;
+        align-items:center;">
+            <!-- <img src="" style="height: 200pt;" alt="" srcset=""> -->
+        </div>
+        <div style="width: 50%;height: 70vh;box-shadow: 0px 0px 30px gray;
+    background: linear-gradient(to bottom right, red,blue);transform: translateX(-10%) scale(1.1);
+    border-radius: 10pt;display: flex;align-items: center;flex-direction: column;justify-content: center;">
+            <div style="font-weight: bold;color: white;font-size: 4vh;margin-bottom: 3vh;">
+                Lets get you registered!
+            </div>
+            <input #usernameField type="text" class="inputField" placeholder="Username">
+            <input #emailField type="text" class="inputField" placeholder="Email">
+            <input [(ngModel)]="password" #passwordField type="password" class="inputField" placeholder="Password">
+            <input [(ngModel)]="vPassword" #vPasswordField type="password" class="inputField"
+                placeholder="Verify Password">
+            <div style="color: yellow;" *ngIf="password !== vPassword && password!== ''">Password unmatched !</div>
+            <input #telephoneField type="tel" class="inputField" placeholder="Phone">
+            <div style="display: flex;flex-direction: row;width: 70%;margin-top: 10pt;">
+                <button class="submitBtn" (click)="register(
+                    usernameField,
+                    emailField,
+                    passwordField,
+                    telephoneField
+                )">
+                    Signin
+                </button>
+                <button class="submitBtn2" routerLink="/login">
+                    Login
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <input type="text" placeholder="Username">
+<input type="text" placeholder="Email">
+<input type="text" placeholder="Phone"> -->

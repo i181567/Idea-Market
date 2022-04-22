@@ -1,12 +1,24 @@
-# Idea-Market
-An application that makes the use of custom Blockchain to protect the ownership of ideas.
-# Pre-installed
-To run the application, you need golang and node installed on your machine.
-# Commands to run the application
-First of all, you need to run the cnode.go by using <br />
-go run cnode.go <br/>
-Now the central node is running. After that, you can run as many nodes as you want by using the followiing command for each node.<br/>
-go run node.go<br />
-Now once the Blockchain is built and the api is ready, you can run the front end for each node by first going to the directory of the front end and then writing<br/>
-npm install<br/>ng serve<br/>
-Now open port 4200 and you can see the interface.
+# IdeaMarket #
+### Monetising your ideas ###
+- - - -
+
+IdeaMarket has three main components.
+1. **An Angular (Node.js) based frontend** 
+    1. Run npm install followed by ng serve from within the frontend folder
+2. **A python backend module that makes use of a pretrained model from huggingface's sentence-transformers**
+    1. install dependencies if not installed already such as pip install sentence_transformers and pip install flask 
+    2. finally run by "python app.py" or "flask run"
+3. **A go backend that handles all block-chain related operations**
+    1. Run 'go mod init' followed by 'go mod tidy'
+    2. Then use "go run api.go" to get the go backend working.
+    3. The go backend is also connected to a mongodb database.
+
+#### Componnet Connections ####
+- The Frontend is communicating with both python and go backend.
+- Python and go backend are communicating with each other.
+- Go backend is communicating with mongodb.
+
+
+
+
+

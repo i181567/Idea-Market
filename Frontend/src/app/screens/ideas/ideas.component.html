@@ -1,0 +1,65 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-5" style="display: flex;align-items: center;flex-direction: column;justify-content: center;
+            font-family: cursive;font-weight: bolder;">
+            <img src="assets/accountLogo.png" style="height: 100pt;margin-top: 10pt;margin-bottom: 20pt;" alt=""
+                srcset="">
+            <div style="font-size: 3vh;font-style: italic;font-weight: bold;color: red;">Welcome
+                {{authSrvs.activeUser.Username}}</div>
+            <div style="font-size: 4vh;font-style: italic;font-weight: bold;color: gray;">Balance
+                {{authSrvs.activeUser.Balance}}DC</div>
+        </div>
+        <div class="col-md-7">
+            <div class="floatingBox1">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4 BlockChainInfoItem">
+                            <img src="assets/bulb.png"
+                                style="height: 70pt;margin-bottom: 10pt;background-color: rgb(230,230,230);border-radius: 35pt;"
+                                alt="">
+                            <div>
+                                Total ideas {{this.ideaService.ideas.length}}
+                            </div>
+                        </div>
+                        <div class="col-md-4 BlockChainInfoItem">
+                            <img src="assets/user.png" style="height: 70pt;margin-bottom: 10pt;" alt="">
+                            <div>
+                                Total Users {{"7"}}
+                            </div>
+                        </div>
+                        <div class="col-md-4 BlockChainInfoItem">
+                            <img src="assets/auction.png" style="height: 70pt;margin-bottom: 10pt;" alt="">
+                            <div>
+                                In Auction {{"7"}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <h1 style="text-align: center;color: gray;
+            margin-top: 5vh;margin-bottom: 5vh;
+            ">Ideas in System</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3" *ngFor="let item of this.ideaService.ideas; let i=index" ngClass="col-12">
+            <div class="ideaBlock">
+                <div style="color: purple;font-weight: bold;">{{item.Title}}</div>
+                <div style="margin-top: 5pt;margin-bottom: 5pt;font-size: small;text-align: start;">{{item.Description === ""?"Pay to view Description ⚠️":item.Description}}</div>
+                <div style="width: 100%;">
+                    <div *ngIf="!isViewable(item)" (click)="payToSee(item.Title)" style="margin-top: 5pt;margin-bottom: 5pt;"
+                        class="viewForPriceBtn">View for
+                        {{item.Viewing_price}}</div>
+                    <!-- <div style="margin-top: 5pt;margin-bottom: 5pt;" class="OwnForPriceBtn">
+                        Bid Now</div> -->
+                    <div style="margin-top: 5pt;margin-bottom: 5pt;text-align: end;
+                        width: 100%;color: gray;margin-top: 10pt;">By: {{item.Owners[item.Owners.length-1]}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

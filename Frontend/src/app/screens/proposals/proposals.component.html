@@ -1,0 +1,87 @@
+<div class="container" style="padding-top: 20pt;">
+    <div class="row">
+        <div class="col-md-5">
+            <div class="searchBox">
+                <div class="container">
+                    <h3 style="font-weight: bolder;">Search Idea</h3>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <input type="text" class="searchField" placeholder="Search Idea">
+                        </div>
+                        <div class="col-md-4">
+                            <button class="searchBtn">Search</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-7">
+            <div class="infoBox">
+                <div class="container">
+                    <div style="display: flex;align-items: center;justify-content: space-around;flex-wrap: wrap;">
+                        <div style="display: flex;flex-direction: column;align-items: center;justify-content: center;">
+                            <img src="assets/bulb.png" style="height: 50pt;" alt="" srcset="">
+                            <div style="font-size: 3vh;font-family: cursive;">
+                                Pending Ideas <b *ngIf="this.proposalSrvs.PendingIdeasList !== null">{{this.proposalSrvs.PendingIdeasList.length}}</b>
+                            </div>
+                        </div>
+                        <div style="display: flex;flex-direction: column;align-items: center;justify-content: center;">
+                            <div style="font-size: 3vh;font-family: cursive;">
+                                Welcome Admin <b>{{authSrvs.activeUser.Username}}</b>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="margin-top: 3vh;">
+        <div class="col-12">
+            <h1 style="font-family: cursive;margin: 30pt;">Pending Approvals</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6" *ngFor="let item of this.proposalSrvs.PendingIdeasList; let i=index"
+            style="padding: 10pt;">
+            <div class="pendingIdea">
+                <div style="width: 100%;">
+                    <div style="font-size: larger;">
+                        <u><i>Name:</i></u> <b> {{item.Title}}</b>
+                    </div>
+                    <div>
+                        <u><i>Description:</i></u> <i> {{item.Description}}</i>
+                    </div>
+                    <div>
+                        <u><i>Similar to:</i></u> <i> {{item.Score_text}}</i>
+                    </div>
+                    <div>
+                        <u><i>Stack used:</i></u>
+                        <div style="padding-left: 20pt;padding-top: 10pt;padding-bottom: 10pt;font-weight: bold;color: gray;">
+                            <div *ngFor="let tech of item.Technologies_used">
+                                ✔️ {{tech}}
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <u><i>Domain:</i></u> <i> {{item.Domain}}</i>
+                    </div>
+                    <div>
+                        <u><i>Problem:</i></u>
+                        <i>
+                            {{item.Problem}}
+                        </i>
+                    </div>
+                </div>
+                <div style="width: 100%;">
+                    <div class="btn-group" style="width: 100%;">
+                        <button class="btn btn-outline-success" (click)="approve(item)">✔️ Approve</button>
+                        <button class="btn btn-outline-dark" (click)="disapprove(item)">❌ Disapprove</button>
+                    </div>
+                    <div style="padding-top: 10pt;text-align: end;">
+                        <u><i>Similarity:</i></u> <b [ngStyle]="{'color': item.Score < 40?'red':'green'}"> {{item.Score}}</b>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

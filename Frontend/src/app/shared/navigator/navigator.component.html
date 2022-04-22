@@ -1,0 +1,60 @@
+<div style="padding-top: 2vh;padding-bottom: 2vh;background-color: navy;
+        background-image: url(assets/waves.png);background-attachment: fixed;
+        background-position: right;">
+    <div class="container">
+        <h1 style="margin: 0pt;color: white;font-family: cursive;font-weight: bolder;">Idea Market</h1>
+    </div>
+</div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top ">
+    <div class="container">
+        <!-- <a class="navbar-brand" [routerLink]="'Home'">Idea Market</a> -->
+        <button class="navbar-toggler" type="button" (click)="isMenuCollapsed = !isMenuCollapsed">
+            &#9776;
+        </button>
+        <div [ngbCollapse]="isMenuCollapsed" style="font-family: cursive;font-weight: bolder;font-size: larger;"
+            class="collapse navbar-collapse justify-content-end">
+            <ul class="navbar-nav">
+                <li *ngIf="auth.activeUser.Username === ''" class="nav-item">
+                    <a class="nav-link" routerLinkActive="active" [routerLink]="'signup'"
+                        (click)="isMenuCollapsed = true">Register</a>
+                </li>
+                <li *ngIf="auth.activeUser.Username === ''" class="nav-item">
+                    <a class="nav-link" routerLinkActive="active" [routerLink]="'login'"
+                        (click)="isMenuCollapsed = true">Log In</a>
+                </li>
+                <li *ngIf="auth.activeUser.Username !== ''" class="nav-item">
+                    <a class="nav-link" routerLinkActive="active" [routerLink]="'home'"
+                        (click)="isMenuCollapsed = true">Home</a>
+                </li>
+                <li *ngIf="auth.activeUser.Username !== ''" class="nav-item">
+                    <a class="nav-link" routerLinkActive="active" [routerLink]="'ideas'"
+                        (click)="isMenuCollapsed = true">Ideas</a>
+                </li>
+                <li *ngIf="auth.activeUser.Username === 'admin'" class="nav-item">
+                    <a class="nav-link" routerLinkActive="active" [routerLink]="'proposals'"
+                        (click)="isMenuCollapsed = true">Proposals</a>
+                </li>
+                <li *ngIf="auth.activeUser.Username !== ''" class="nav-item">
+                    <a class="nav-link" routerLinkActive="active" [routerLink]="'auction'"
+                        (click)="isMenuCollapsed = true">Auction</a>
+                </li>
+                <li *ngIf="auth.activeUser.Username !== ''" class="nav-item">
+                    <a class="nav-link" routerLinkActive="active" [routerLink]="'my-ideas'"
+                        (click)="isMenuCollapsed = true">My Ideas</a>
+                </li>
+                <li *ngIf="auth.activeUser.Username !== ''" class="nav-item">
+                    <a class="nav-link" routerLinkActive="active" [routerLink]="'propose-new'"
+                        (click)="isMenuCollapsed = true">Propose Idea</a>
+                </li>
+                <li *ngIf="auth.activeUser.Username !== ''" class="nav-item">
+                    <a class="nav-link" routerLinkActive="active" [routerLink]="'account'"
+                        (click)="isMenuCollapsed = true">Account</a>
+                </li>
+                <li *ngIf="auth.activeUser.Username !== ''" class="nav-item">
+                    <a class="nav-link" routerLinkActive="active" style="color: red;" [routerLink]="'account'"
+                    (click)="isMenuCollapsed = true" (click)="logout()">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,32 @@
+<div class="container">
+    <h1 style="margin: 30pt;font-family: cursive;color: blue;font-weight: bolder;">Auction Hall</h1>
+    <div class="row">
+        <div class="col-md-3">
+            <div style="font-size: larger;font-weight: bolder;color: purple;">Set your Bid</div>
+            <input [(ngModel)]="biddingPrice" type="number" style="margin-top: 5pt;margin-bottom: 5pt;"
+                class="viewForPriceBtn" />
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-lg-3" *ngFor="let item of this.auctionService.ideas; let i=index" ngClass="col-12">
+            <div class="ideaBlock" *ngIf="item.Bidding">
+                <div style="color: purple;font-weight: bold;">{{item.Title}}</div>
+                <div style="margin-top: 5pt;margin-bottom: 5pt;font-size: small;text-align: start;">{{item.Description === ""?"Pay to view Description ⚠️":item.Description}}</div>
+                <div style="width: 100%;">
+                    <div style="margin-top: 5pt;margin-bottom: 5pt;" (click)="this.bid(item.Title,biddingPrice)"
+                        class="OwnForPriceBtn">
+                        Bid Now</div>
+                    <div style="margin-top: 5pt;margin-bottom: 5pt;text-align: end;
+                    width: 100%;color: gray;margin-top: 10pt;">By: {{item.Owners[item.Owners.length-1]}}</div>
+                    <div style="color: cadetblue;text-align: start;">
+
+                        <div> Price: {{item.Ownership_price}}</div>
+                        <div> Highest Bid: {{item.Highest_bidding_price}}</div>
+                        <div>By: {{item.Highest_bidder}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

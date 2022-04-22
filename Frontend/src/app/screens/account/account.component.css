@@ -1,0 +1,156 @@
+.creditCard {
+    height: 30vh;
+    width: 80%;
+    margin-top: 2vh;
+    background-position: top;
+    color: white;
+    border-radius: 10pt;
+    cursor: default;
+    overflow: hidden;
+    box-shadow: 0px 0px 60px rgb(119, 119, 119);
+    transition: 0.5s;
+}
+
+.creditCard:hover {
+    transform: rotate(-5deg) scale(1.05) translateY(5%);
+}
+
+.creditCardInput {
+    border: 2px solid greenyellow;
+    padding-left: 10pt;
+    padding-right: 10pt;
+    padding-top: 5pt;
+    padding-bottom: 5pt;
+    background-color: transparent;
+    color: greenyellow;
+    border-radius: 5pt;
+    margin-right: 5pt;
+    width: 60%;
+}
+
+.creditCardInput::placeholder {
+    color: yellow;
+}
+
+.creditCardSubmit {
+    border: 2px solid greenyellow;
+    padding-left: 10pt;
+    padding-right: 10pt;
+    padding-top: 5pt;
+    padding-bottom: 5pt;
+    background-color: transparent;
+    color: greenyellow;
+    border-radius: 5pt;
+    margin-left: 5pt;
+    width: 30%;
+    transition: 0.2s;
+}
+
+.creditCardSubmit:hover {
+    background-color: greenyellow;
+    color: black;
+}
+
+.creditCardSubmit:active {
+    transform: scale(0.9);
+}
+
+.accInfoField {
+    margin-bottom: 10pt;
+    background-color: transparent;
+    border-radius: 20pt;
+    padding-left: 20pt;
+    padding-right: 20pt;
+    padding-top: 5pt;
+    padding-bottom: 5pt;
+    border: 1px solid darkblue;
+    width: 60%;
+    font-size: 2vh;
+}
+
+.accInfoField::placeholder {
+    font-family: cursive;
+}
+
+.accInfoField:disabled {
+    background-color: rgb(211, 151, 237);
+
+}
+
+.accInfoField:disabled::placeholder {
+    color: white;
+}
+
+.deleteBtn {
+    margin-bottom: 10pt;
+    background-color: transparent;
+    border-radius: 20pt;
+    padding-left: 20pt;
+    padding-right: 20pt;
+    padding-top: 5pt;
+    padding-bottom: 5pt;
+    border: 1px solid darkblue;
+    width: 27%;
+    margin-left: 2%;
+    margin-right: 1%;
+    font-size: 2vh;
+    color: red;
+    margin-top: 10pt;
+    transition: 0.3s;
+}
+
+.updateBtn {
+    margin-bottom: 10pt;
+    background-color: transparent;
+    border-radius: 20pt;
+    padding-left: 20pt;
+    padding-right: 20pt;
+    padding-top: 5pt;
+    padding-bottom: 5pt;
+    border: 1px solid darkblue;
+    width: 27%;
+    margin-right: 2%;
+    margin-left: 1%;
+    font-size: 2vh;
+    color: blueviolet;
+    margin-top: 10pt;
+    transition: 0.3s;
+}
+
+.updateBtn:hover {
+    scale: 1.05;
+}
+
+.deleteBtn:hover {
+    scale: 1.05;
+}
+.updateBtn:active {
+    scale: 0.95;
+}
+
+.deleteBtn:active {
+    scale: 0.95;
+}
+
+.cancelBtn {
+    margin-bottom: 10pt;
+    background-color: transparent;
+    border-radius: 20pt;
+    padding-left: 20pt;
+    padding-right: 20pt;
+    padding-top: 5pt;
+    padding-bottom: 5pt;
+    border: 1px solid darkblue;
+    width: 60%;
+    font-size: 2vh;
+    color: rgb(255, 0, 162);
+    margin-top: 10pt;
+    transition: 0.3s;
+}
+
+.cancelBtn:hover {
+    scale: 1.05;
+}
+.cancelBtn:active {
+    scale: 0.95;
+}

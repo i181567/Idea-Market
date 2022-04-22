@@ -1,0 +1,57 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <h1 style="font-family: cursive;margin:30pt">Add your Idea</h1>
+            <div>
+                <input [(ngModel)]="this.newIdea.Title" class="form-control inputField" type="text" placeholder="Title">
+            </div>
+            <div>
+                <textarea [(ngModel)]="this.newIdea.Description" class="form-control inputField" type="text"
+                    placeholder="Description"></textarea>
+            </div>
+            <div>
+                <input [(ngModel)]="this.newIdea.Ownership_price" class="form-control inputField" type="text"
+                    placeholder="Ownership Price">
+            </div>
+            <div>
+                <input [(ngModel)]="this.newIdea.Viewing_price" class="form-control inputField" type="text"
+                    placeholder="Viewing Price">
+            </div>
+            <div>
+                <input [(ngModel)]="this.newIdea.Domain" class="form-control inputField" type="text"
+                    placeholder="Domain">
+            </div>
+
+            <div>
+                <textarea [(ngModel)]="this.newIdea.Problem" class="form-control inputField" type="text"
+                    placeholder="Problem"></textarea>
+            </div>
+            <div>
+                <input [(ngModel)]="newStack" (keyup.enter)="addTechStack()" class="form-control inputField" type="text"
+                    placeholder="Technologies used" />
+            </div>
+
+            <div style="display: flex;flex-direction: row;flex-wrap: wrap;">
+                <div style="margin: 5pt;" *ngFor="let stack of this.newIdea.Technologies_used; let i=index">
+                    <div class="btn btn-outline-primary">
+                        {{stack}}
+                        <div style="margin-left:5pt;display: inline;cursor: pointer;" (click)="RemoveTechStack(i)">
+                            ❌
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="display: flex;flex-direction: row;justify-content: flex-end;align-items: center;">
+                <div style="margin-top: 10pt;">
+                    <button class="proposeBtn" (click)="proposeIdea()">Propose this Idea</button>
+                </div>
+                <div style="margin-top: 10pt;">
+                    <button class="proposeBtn2" routerLink="/ideas">See Market</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+</div>

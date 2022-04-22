@@ -1,0 +1,51 @@
+.inputField {
+    border: 2pt solid rgba(52, 97, 202, 0.594);
+    width: 100%;
+    border-radius: 10pt;
+    padding: 10pt;
+    margin-bottom: 10pt;
+}
+
+.proposeBtn {
+    background-color: transparent;
+    border: 2pt solid rgba(52, 97, 202, 0.594);
+    padding-left: 20pt;
+    padding-right: 20pt;
+    padding-top: 5pt;
+    padding-bottom: 5pt;
+    border-radius: 10pt;
+    transition: 0.3s;
+    margin-right: 10pt;
+}
+
+.proposeBtn:hover {
+    color: white;
+    background-color: rgba(52, 97, 202, 0.594);
+}
+
+.proposeBtn:active {
+    color: white;
+    scale: 0.9;
+}
+
+.proposeBtn2 {
+    background-color: transparent;
+    border: 2pt solid rgba(134, 52, 202, 0.594);
+    padding-left: 20pt;
+    padding-right: 20pt;
+    padding-top: 5pt;
+    padding-bottom: 5pt;
+    border-radius: 10pt;
+    transition: 0.3s;
+    margin-left: 10pt;
+}
+
+.proposeBtn2:hover {
+    color: white;
+    background-color: rgba(134, 52, 202, 0.594);
+}
+
+.proposeBtn2:active {
+    color: white;
+    scale: 0.9;
+}

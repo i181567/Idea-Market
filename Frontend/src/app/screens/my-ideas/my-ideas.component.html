@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h1 style="text-align: center;color: gray;
+            margin-top: 5vh;margin-bottom: 5vh;font-family: cursive;
+            ">{{this.authSrvs.activeUser.Username}}'s Ideas</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3" *ngFor="let item of this.ideaService.myideas; let i=index" ngClass="col-12">
+            <div class="ideaBlock">
+                <div style="color: purple;font-weight: bold;">{{item.Title}}</div>
+                <div style="margin-top: 5pt;margin-bottom: 5pt;font-size: small;text-align: start;">{{item.Description === ""?"Pay to view Description ⚠️":item.Description}}</div>
+                <div style="width: 100%;">
+                    <div *ngIf="item.Bidding === true" 
+                    (click)="stopBidding(item)"
+                    style="margin-top: 5pt;margin-bottom: 5pt;"
+                        class="viewForPriceBtn">Stop Bidding</div>
+                    <div *ngIf="item.Bidding === false" 
+                    (click)="startBidding(item)"
+                    style="margin-top: 5pt;margin-bottom: 5pt;"
+                        class="OwnForPriceBtn">
+                        Start Bidding</div>
+                    <div style="margin-top: 5pt;margin-bottom: 5pt;text-align: end;
+                        width: 100%;color: gray;margin-top: 10pt;">By: {{item.Owners[item.Owners.length-1]}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

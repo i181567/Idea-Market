@@ -1,0 +1,73 @@
+.inputField {
+    background-color: transparent;
+    border: 2px solid rgb(0, 255, 89);
+    padding-left: 30pt;
+    padding-right: 30pt;
+    padding-top: 10pt;
+    padding-bottom: 10pt;
+    width: 70%;
+    border-radius: 20pt;
+    color: white;
+    transition: 0.2s;
+    margin: 10pt;
+
+}
+
+.inputField::placeholder {
+    color: greenyellow;
+}
+
+.inputField:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 30px rgb(0, 255, 89);
+}
+
+.submitBtn {
+    background-color: transparent;
+    border: 2px solid rgb(0, 255, 89);
+    background-color: greenyellow;
+    padding-left: 30pt;
+    padding-right: 30pt;
+    padding-top: 10pt;
+    padding-bottom: 10pt;
+    width: 70%;
+    border-radius: 20pt;
+    color: black;
+    font-weight: bold;
+    transition: 0.2s;
+    margin: 10pt;
+}
+
+.submitBtn:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 30px rgb(0, 255, 89);
+}
+
+.submitBtn:active {
+    transform: scale(0.95);
+    box-shadow: 0px 0px 30px rgb(0, 255, 89);
+}
+.submitBtn2 {
+    background-color: transparent;
+    border: 2px solid rgb(0, 255, 89);
+    padding-left: 30pt;
+    padding-right: 30pt;
+    padding-top: 10pt;
+    padding-bottom: 10pt;
+    width: 70%;
+    border-radius: 20pt;
+    color: rgb(0, 255, 89);
+    font-weight: bold;
+    transition: 0.2s;
+    margin: 10pt;
+}
+
+.submitBtn2:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 30px rgb(0, 255, 89);
+}
+
+.submitBtn2:active {
+    transform: scale(0.95);
+    box-shadow: 0px 0px 30px rgb(0, 255, 89);
+}
