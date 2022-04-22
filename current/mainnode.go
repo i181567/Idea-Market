@@ -1185,7 +1185,7 @@ func totalusers(w http.ResponseWriter, r *http.Request) {
 	results, err := db.Query("select count(*) from user;")
 	if err != nil {
 		json.NewEncoder(w).Encode("AN ERROR OCCURRED!")
-		fmt.Print("AN ERROR OCCURRED!")
+		fmt.Print("AN ERROR OCCURRED DB!")
 		defer db.Close()
 		return
 	}
@@ -1194,7 +1194,7 @@ func totalusers(w http.ResponseWriter, r *http.Request) {
 		err = results.Scan(&number_of_users)
 		if err != nil {
 			json.NewEncoder(w).Encode("An error occured!")
-			fmt.Print("An error occured!")
+			fmt.Print("An error occured! 2")
 			defer db.Close()
 			break
 		}
