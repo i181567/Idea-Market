@@ -8,7 +8,7 @@ from flask_cors import CORS, cross_origin
 import requests
 #from sklearn.feature_extraction.text import TfidfVectorizer
 #from sklearn.metrics.pairwise import linear_kernel
-# from sentence_transformers import SentenceTransformer, util
+from sentence_transformers import SentenceTransformer, util
 from flask_cors import CORS
 import json
 app = Flask(__name__)
@@ -26,7 +26,7 @@ def index():
 @app.route('/nlp/<user_id>', methods=['POST'])
 def getBlockChain(user_id):
     # validate user id
-    if (validate(user_id=user_id)):
+    if (validate(user_id=user_id or True)):
         print("IM in")
         # in last approach we sent data as query parameter with ?text_a=something&text_b=something
         # as you can see below next two commented lines
@@ -35,13 +35,14 @@ def getBlockChain(user_id):
         # now we're sending data as body. so now we select body in thunder client rather than header.
         # header dont support sending of large data body does.
 
-        response = requests.get('http://localhost:8081/getchain')
+        response = requests.get('http://localhost:8081/listideas')
         # print(response.json()[0]['Description'])
 
         # dscrpt=[]
 
         for i in response.json():
             ideaList.append(i['Description'])
+            print(i['Description'])
 
         # print(ideaList)
         # return dscrpt
@@ -114,8 +115,7 @@ def similarityAcrossIdeas(ideaA):
     #     dscrpt.append(i['Description'])
     # f.close()
 
-    model = SentenceTransformer(
-        'sentence-transformers/multi-qa-MiniLM-L6-cos-v1')
+    model = SentenceTransformer('sentence-transformers/multi-qa-MiniLM-L6-cos-v1')
     # print(ideaA)
     # print(ideaList)
     # Encode query and documents
@@ -153,23 +153,30 @@ def abc():
     # print(ideaList)
     # return request.data
 
-    # score_txt = similarityAcrossIdeas(ideaA) #UNCOMMENT THIS PLEASE
+    score_txt = similarityAcrossIdeas(ideaA) #UNCOMMENT THIS PLEASE
 
     # print(score_txt)
 
-    # x= {
-    #   "Title": request.json['Title'],
-    #   "Description": request.json['Description'],
-    #   "Domain": request.json['Domain'],
-    #   "Owners": request.json['Owners'],
-    #   "Ownership_price": request.json['Ownership_price'],
-    #   "Pricing_history": request.json['Pricing_history'],
-    #   "Problem": request.json['Problem'],
-    #   "Technologies_used": request.json['Technologies_used'],
-    #   "Viewing_price": request.json['Viewing_price'],
-    #   "score_text": score_txt[0],
-    #   "score": score_txt[1]
-    # }
+    proposedIdea= {
+      "Title": request.json['Title'],
+      "Description": request.json['Description'],
+      "Owners": request.json['Owners'],
+      "Problem": request.json['Problem'],
+      "Domain": request.json['Domain'],
+      "Technologies_used": request.json['Technologies_used'],
+      "Viewing_price": float(request.json['Viewing_price']),
+      "Ownership_price": float(request.json['Ownership_price']),
+      "Pricing_history": request.json['Pricing_history'],
+      "Score_text": score_txt[0],
+      "Score": score_txt[1]
+    }
+    print(type(proposedIdea["Title"]))
+    print(type(proposedIdea["Score_text"]))
+    print(type(proposedIdea["Score"]))
+    print(type(proposedIdea["Viewing_price"]))
+    print(type(proposedIdea["Ownership_price"]))
+    print(type(proposedIdea["Pricing_history"]))
+
 
     # proposedIdea = {
     #     'BlockData': {
@@ -189,21 +196,21 @@ def abc():
     #     "SimScore": 0.12
     # }
 
-    proposedIdea = {
-        "Title":       request.json['Title'],
-        "Description": request.json['Description'],
-        "Owners": request.json['Owners'],
-        "Problem": request.json['Problem'],
-        "Domain": request.json['Domain'],
-        "Technologies_used": request.json['Technologies_used'],
-        # "Viewing_price": request.json['Viewing_price'],
-        "Viewing_price": 0,
-        # "Ownership_price": request.json['Ownership_price'],
-        "Ownership_price": 1,
-        "Pricing_history": request.json['Pricing_history'],
-        "Score_text": "Some score text",
-        "Score": 1.28
-    }
+    # proposedIdea = {
+    #     "Title":       request.json['Title'],
+    #     "Description": request.json['Description'],
+    #     "Owners": request.json['Owners'],
+    #     "Problem": request.json['Problem'],
+    #     "Domain": request.json['Domain'],
+    #     "Technologies_used": request.json['Technologies_used'],
+    #     # "Viewing_price": request.json['Viewing_price'],
+    #     "Viewing_price": 0,
+    #     # "Ownership_price": request.json['Ownership_price'],
+    #     "Ownership_price": 1,
+    #     "Pricing_history": request.json['Pricing_history'],
+    #     "Score_text": "Some score text",
+    #     "Score": 1.28
+    # }
 
     # this is was online that was required to convert it into the json and send
     proposedIdea = json.dumps(proposedIdea)
@@ -219,4 +226,5 @@ def abc():
 
 
 if __name__ == "__main__":
+    getBlockChain("1234")
     app.run(debug=True, host="localhost", port=8082)
