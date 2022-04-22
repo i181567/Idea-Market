@@ -21,6 +21,93 @@
    3001
   ],
   "Can_be_viewed_by": [],
+  "Bidding": true,
+  "Highest_bidder": "",
+  "Highest_bidding_price": 0,
+  "Start_bidding_time": "",
+  "End_bidding_time": "",
+  "Hash_of_idea": "2104eef880bf6eee699fb10cb8cc7d7dede2e9437410e48c178db851a2d00301"
+ },
+ {
+  "Title": "Route and Safety Awareness using android app (RSA)",
+  "Description": "Route and Safety Awareness using android app as in RSA is an AI-based app that will assist the driver with the road signs and boards. Real-Time video would be captured of the surroundings and that will be given as input to the Android app, and here Preprocessing would be performed on each frame of the video. Deep learning and image processing algorithms would be implemented that will detect and classify the direction signs and safety signs. It will read text written on sign boards and convert that sign image to text then it will convert that text into audio that the driver can listen to using the app.",
+  "Owners": [
+   "Amna Arshad",
+   "u7",
+   "u1"
+  ],
+  "Problem": "",
+  "Domain": "Route and Safety Awareness using android app as in RSA is an AI-based app that will assist the driver with the road signs and boards. Real-Time video would be captured of the surroundings and that will be given as input to the Android app, and here Preprocessing would be performed on each frame of the video. Deep learning and image processing algorithms would be implemented that will detect and classify the direction signs and safety signs. It will read text written on sign boards and convert that sign image to text then it will convert that text into audio that the driver can listen to using the app.",
+  "Technologies_used": [
+   "Android Studio",
+   "Flutter"
+  ],
+  "Viewing_price": 200,
+  "Ownership_price": 3001,
+  "Pricing_history": [
+   2000,
+   2007,
+   3001
+  ],
+  "Can_be_viewed_by": [],
+  "Bidding": false,
+  "Highest_bidder": "",
+  "Highest_bidding_price": 0,
+  "Start_bidding_time": "",
+  "End_bidding_time": "",
+  "Hash_of_idea": "44084ed0d13de85e287dac49a7ad76eabd476b953660a8516c175a4ddf9b1fcd"
+ },
+ {
+  "Title": "Route and Safety Awareness using android app (RSA)",
+  "Description": "Route and Safety Awareness using android app as in RSA is an AI-based app that will assist the driver with the road signs and boards. Real-Time video would be captured of the surroundings and that will be given as input to the Android app, and here Preprocessing would be performed on each frame of the video. Deep learning and image processing algorithms would be implemented that will detect and classify the direction signs and safety signs. It will read text written on sign boards and convert that sign image to text then it will convert that text into audio that the driver can listen to using the app.",
+  "Owners": [
+   "Amna Arshad",
+   "u7",
+   "u1"
+  ],
+  "Problem": "",
+  "Domain": "Route and Safety Awareness using android app as in RSA is an AI-based app that will assist the driver with the road signs and boards. Real-Time video would be captured of the surroundings and that will be given as input to the Android app, and here Preprocessing would be performed on each frame of the video. Deep learning and image processing algorithms would be implemented that will detect and classify the direction signs and safety signs. It will read text written on sign boards and convert that sign image to text then it will convert that text into audio that the driver can listen to using the app.",
+  "Technologies_used": [
+   "Android Studio",
+   "Flutter"
+  ],
+  "Viewing_price": 200,
+  "Ownership_price": 3001,
+  "Pricing_history": [
+   2000,
+   2007,
+   3001
+  ],
+  "Can_be_viewed_by": [],
+  "Bidding": true,
+  "Highest_bidder": "",
+  "Highest_bidding_price": 0,
+  "Start_bidding_time": "",
+  "End_bidding_time": "",
+  "Hash_of_idea": "2104eef880bf6eee699fb10cb8cc7d7dede2e9437410e48c178db851a2d00301"
+ },
+ {
+  "Title": "Route and Safety Awareness using android app (RSA)",
+  "Description": "Route and Safety Awareness using android app as in RSA is an AI-based app that will assist the driver with the road signs and boards. Real-Time video would be captured of the surroundings and that will be given as input to the Android app, and here Preprocessing would be performed on each frame of the video. Deep learning and image processing algorithms would be implemented that will detect and classify the direction signs and safety signs. It will read text written on sign boards and convert that sign image to text then it will convert that text into audio that the driver can listen to using the app.",
+  "Owners": [
+   "Amna Arshad",
+   "u7",
+   "u1"
+  ],
+  "Problem": "",
+  "Domain": "Route and Safety Awareness using android app as in RSA is an AI-based app that will assist the driver with the road signs and boards. Real-Time video would be captured of the surroundings and that will be given as input to the Android app, and here Preprocessing would be performed on each frame of the video. Deep learning and image processing algorithms would be implemented that will detect and classify the direction signs and safety signs. It will read text written on sign boards and convert that sign image to text then it will convert that text into audio that the driver can listen to using the app.",
+  "Technologies_used": [
+   "Android Studio",
+   "Flutter"
+  ],
+  "Viewing_price": 200,
+  "Ownership_price": 3001,
+  "Pricing_history": [
+   2000,
+   2007,
+   3001
+  ],
+  "Can_be_viewed_by": [],
   "Bidding": false,
   "Highest_bidder": "",
   "Highest_bidding_price": 0,

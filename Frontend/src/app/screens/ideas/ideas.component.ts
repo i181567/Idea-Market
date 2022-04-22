@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuctionService } from 'src/app/services/auction.service';
 import { AuthService } from 'src/app/services/auth.service';
 import { IdeasService } from 'src/app/services/ideas.service';
 
@@ -9,7 +10,7 @@ import { IdeasService } from 'src/app/services/ideas.service';
 })
 export class IdeasComponent implements OnInit {
 
-  constructor(public ideaService: IdeasService, public authSrvs: AuthService) {
+  constructor(public ideaService: IdeasService, public authSrvs: AuthService, public auctionSrvs: AuctionService) {
   }
 
   ngOnInit(): void {

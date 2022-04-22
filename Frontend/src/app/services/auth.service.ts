@@ -25,11 +25,14 @@ export class AuthService {
     Username: ""
   };
 
+  public totalNumUser:number = 0
+
   constructor(private http: HttpClient, private router: Router) {
 
     if (this.checkPersist()) {
       this.loginPersistent()
     }
+    this.totalUser()
   }
 
   public logout() {
@@ -73,12 +76,13 @@ export class AuthService {
       .then(res => {
         if (res === "OK") {
           this.router.navigateByUrl("/login")
+          this.totalUser()
         } else {
           alert("Choose a different username and email")
         }
       })
       .catch(err => {
-        console.log(err);
+        console.log("Can't sign you up");
       })
   }
 
@@ -96,11 +100,11 @@ export class AuthService {
           this.router.navigateByUrl("/ideas")
 
         } else {
-          alert(res)
+          alert("Invalid User")
         }
       })
       .catch(err => {
-        console.log(err);
+        alert("Invalid User")
       })
   }
 
@@ -117,11 +121,12 @@ export class AuthService {
           this.router.navigateByUrl("/ideas")
 
         } else {
-          alert(res)
+          alert("Invalid User")
         }
       })
       .catch(err => {
         console.log(err);
+        alert("Invalid User")
       })
   }
 
@@ -136,10 +141,11 @@ export class AuthService {
           this.activeUser = res[0]
           console.log(this.activeUser);
         } else {
-          alert(res)
+          alert("Invalid User")
         }
       })
       .catch(err => {
+        alert("Invalid User")
         console.log(err);
       })
   }
@@ -196,10 +202,24 @@ export class AuthService {
       .then(res => {
         console.log(res);
         alert("You'll be logged out now")
+        this.totalUser()
         this.router.navigateByUrl("/login")
       })
       .catch(err => {
         console.log(err)
+      })
+  }
+
+  totalUser() {
+    this.http.get<number>(`${apiip}/totalusers`)
+      .toPromise()
+      .then(res => {
+        console.log(res);
+        if (res !== undefined)
+          this.totalNumUser = res
+      })
+      .catch(err => {
+        console.log(err);
       })
   }
 

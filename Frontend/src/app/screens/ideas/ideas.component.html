@@ -24,13 +24,13 @@
                         <div class="col-md-4 BlockChainInfoItem">
                             <img src="assets/user.png" style="height: 70pt;margin-bottom: 10pt;" alt="">
                             <div>
-                                Total Users {{"7"}}
+                                Total Users {{this.authSrvs.totalNumUser}}
                             </div>
                         </div>
                         <div class="col-md-4 BlockChainInfoItem">
                             <img src="assets/auction.png" style="height: 70pt;margin-bottom: 10pt;" alt="">
                             <div>
-                                In Auction {{"7"}}
+                                In Auction {{this.auctionSrvs.ideas.length === null? 0 : this.auctionSrvs.ideas.length}}
                             </div>
                         </div>
                     </div>
@@ -49,10 +49,11 @@
         <div class="col-lg-3" *ngFor="let item of this.ideaService.ideas; let i=index" ngClass="col-12">
             <div class="ideaBlock">
                 <div style="color: purple;font-weight: bold;">{{item.Title}}</div>
-                <div style="margin-top: 5pt;margin-bottom: 5pt;font-size: small;text-align: start;">{{item.Description === ""?"Pay to view Description ⚠️":item.Description}}</div>
+                <div style="margin-top: 5pt;margin-bottom: 5pt;font-size: small;text-align: start;">{{item.Description
+                    === ""?"Pay to view Description ⚠️":item.Description}}</div>
                 <div style="width: 100%;">
-                    <div *ngIf="!isViewable(item)" (click)="payToSee(item.Title)" style="margin-top: 5pt;margin-bottom: 5pt;"
-                        class="viewForPriceBtn">View for
+                    <div *ngIf="!isViewable(item)" (click)="payToSee(item.Title)"
+                        style="margin-top: 5pt;margin-bottom: 5pt;" class="viewForPriceBtn">View for
                         {{item.Viewing_price}}</div>
                     <!-- <div style="margin-top: 5pt;margin-bottom: 5pt;" class="OwnForPriceBtn">
                         Bid Now</div> -->
