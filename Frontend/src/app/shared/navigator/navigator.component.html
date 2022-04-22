@@ -22,9 +22,9 @@
                     <a class="nav-link" routerLinkActive="active" [routerLink]="'login'"
                         (click)="isMenuCollapsed = true">Log In</a>
                 </li>
-                <li *ngIf="auth.activeUser.Username !== ''" class="nav-item">
-                    <a class="nav-link" routerLinkActive="active" [routerLink]="'home'"
-                        (click)="isMenuCollapsed = true">Home</a>
+                <li  class="nav-item">
+                    <a class="nav-link" style="cursor: pointer;" 
+                        (click)="showHome()">Home</a>
                 </li>
                 <li *ngIf="auth.activeUser.Username !== ''" class="nav-item">
                     <a class="nav-link" routerLinkActive="active" [routerLink]="'ideas'"

@@ -16,4 +16,12 @@ export class NavigatorComponent implements OnInit {
     this.auth.logout()
   }
 
+  showHome() {
+    let home = document.getElementById("Home")
+    let root = document.getElementById("Root")
+    if (home != undefined && root != undefined) {
+      home.setAttribute('style', 'height:0pt;overflow:hidden')
+      // root.setAttribute('hidden', 'true')
+    }
+  }
 }
