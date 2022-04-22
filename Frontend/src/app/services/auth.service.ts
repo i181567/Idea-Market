@@ -25,9 +25,15 @@ export class AuthService {
     Username: ""
   };
 
-  constructor(private http: HttpClient, private router: Router) { }
+  constructor(private http: HttpClient, private router: Router) {
+
+    if (this.checkPersist()) {
+      this.loginPersistent()
+    }
+  }
 
   public logout() {
+    this.rmpersist()
     this.router.navigateByUrl('/login')
     this.activeUser = {
       Balance: 0,
@@ -36,6 +42,21 @@ export class AuthService {
       Phonenumber: "",
       Username: ""
     };
+  }
+
+  persist(username: string, password: string) {
+    localStorage.setItem("U", username)
+    localStorage.setItem("P", password)
+  }
+  rmpersist() {
+    localStorage.removeItem("U")
+    localStorage.removeItem("P")
+  }
+  checkPersist() {
+    if (localStorage.getItem("U") !== null && localStorage.getItem("P") !== null) {
+      return true
+    }
+    return false
   }
 
   public register(
@@ -71,7 +92,30 @@ export class AuthService {
         if (res !== "ERR") {
           this.activeUser = res[0]
           console.log(this.activeUser);
+          this.persist(username, password)
           this.router.navigateByUrl("/ideas")
+
+        } else {
+          alert(res)
+        }
+      })
+      .catch(err => {
+        console.log(err);
+      })
+  }
+
+  public loginPersistent() {
+    this.http.post<any>(`${apiip}/signin`, {
+      Username: localStorage.getItem("U"),
+      Password: localStorage.getItem("P")
+    })
+      .toPromise()
+      .then(res => {
+        if (res !== "ERR") {
+          this.activeUser = res[0]
+          console.log(this.activeUser);
+          this.router.navigateByUrl("/ideas")
+
         } else {
           alert(res)
         }
