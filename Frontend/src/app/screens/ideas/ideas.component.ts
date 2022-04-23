@@ -11,6 +11,7 @@ import { IdeasService } from 'src/app/services/ideas.service';
 export class IdeasComponent implements OnInit {
 
   constructor(public ideaService: IdeasService, public authSrvs: AuthService, public auctionSrvs: AuctionService) {
+    this.ideaService.loadIdeas();
   }
 
   ngOnInit(): void {
@@ -24,7 +25,6 @@ export class IdeasComponent implements OnInit {
 
   isViewable(idea: any) {
     return (idea.Can_be_viewed_by.filter((vu: string) => vu !== "").findIndex((vu: string) => vu === this.authSrvs.activeUser.Username) !== -1)
-    // this.authSrvs.activeUser.Username
   }
 
 

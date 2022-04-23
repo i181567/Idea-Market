@@ -8,7 +8,7 @@ from flask_cors import CORS, cross_origin
 import requests
 #from sklearn.feature_extraction.text import TfidfVectorizer
 #from sklearn.metrics.pairwise import linear_kernel
-from sentence_transformers import SentenceTransformer, util
+# from sentence_transformers import SentenceTransformer, util
 from flask_cors import CORS
 import json
 app = Flask(__name__)
@@ -115,7 +115,7 @@ def similarityAcrossIdeas(ideaA):
     #     dscrpt.append(i['Description'])
     # f.close()
 
-    model = SentenceTransformer('sentence-transformers/multi-qa-MiniLM-L6-cos-v1')
+    # model = SentenceTransformer('sentence-transformers/multi-qa-MiniLM-L6-cos-v1')
     # print(ideaA)
     # print(ideaList)
     # Encode query and documents
@@ -123,7 +123,7 @@ def similarityAcrossIdeas(ideaA):
     doc_emb = model.encode(ideaList)
 
     # Compute dot score between query and all document embeddings
-    scores = util.dot_score(query_emb, doc_emb)[0].cpu().tolist()
+    # scores = util.dot_score(query_emb, doc_emb)[0].cpu().tolist()
 
     # Combine docs & scores
     doc_score_pairs = list(zip(ideaList, scores))
@@ -153,7 +153,7 @@ def abc():
     # print(ideaList)
     # return request.data
 
-    score_txt = similarityAcrossIdeas(ideaA) #UNCOMMENT THIS PLEASE
+    # score_txt = similarityAcrossIdeas(ideaA) #UNCOMMENT THIS PLEASE
 
     # print(score_txt)
 
@@ -167,6 +167,7 @@ def abc():
       "Viewing_price": float(request.json['Viewing_price']),
       "Ownership_price": float(request.json['Ownership_price']),
       "Pricing_history": request.json['Pricing_history'],
+    #   "Score_text": score_txt[0],
       "Score_text": score_txt[0],
       "Score": score_txt[1]
     }

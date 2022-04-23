@@ -30,7 +30,8 @@ export class IdeasService {
           this.ideas = res
         }
         console.log("showideas");
-
+        console.log(this.authSrvs.activeUser.Username);
+        
         console.log(this.ideas);
       })
       .catch(err => {
